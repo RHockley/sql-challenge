@@ -1,3 +1,4 @@
+--Create the tables
 CREATE TABLE "departments" (
     "dept_no" VARCHAR   NOT NULL,
     "dept_name" VARCHAR   NOT NULL,
@@ -42,6 +43,7 @@ CREATE TABLE "salaries" (
     "salary" INT   NOT NULL
 );
 
+--Define the foreign keys
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
 REFERENCES "titles" ("title_id");
 
@@ -60,6 +62,7 @@ REFERENCES "employees" ("emp_no");
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
+--Check the tables
 SELECT * FROM departments;
 SELECT * FROM titles;	
 SELECT * FROM employees;	
